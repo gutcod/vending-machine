@@ -8,12 +8,23 @@ const Calc = ({ productId, selectedCoin }) => {
     return null;
   }
   const rest = selectedCoin - product.price;
-  console.log(rest);
   return (
-    <div>
-      <span>{product.cod}</span>
-      <span>{product.price}</span>
-      <span>{product.title}</span>
+    <div className='center bg-washed-blue pa1 flex flex-column w-90  tr'>
+      {rest < 0 ? (
+        <div className='f6 ttu tracked-mega mt0'>
+          <p>produsul:{product.title}</p>
+          <p>codul:{product.cod}</p>
+          <p>pret:{product.price}</p>
+          <p>Introduceti minim {Math.abs(rest)} lei</p>
+        </div>
+      ) : (
+        <div className='f6 ttu tracked-mega mt0'>
+          <p>produsul:{product.title}</p>
+          <p>codul:{product.cod}</p>
+          <p>pret:{product.price}</p>
+          <p>Restul:{rest} lei</p>
+        </div>
+      )}
     </div>
   );
 };

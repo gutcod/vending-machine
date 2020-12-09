@@ -27,22 +27,26 @@ const Machine = ({ resetCoin, setProduct, product }) => {
   return (
     <div>
       {Object.values(BUTTONS_MAP).map(value => {
-        return value.map((btn, idx) => {
+        return value.map((btn, id) => {
           return (
             <button
+              className='f6 ph4 pv2 mb2 white bg-green flex-inline w-30 br3'
               onClick={() => onItemClick(btn)}
               disabled={
                 disabled.includes(btn) || value.includes(product[0]) || value.includes(product[1])
               }
-              key={idx}>
+              key={id}>
               {btn}
             </button>
           );
         });
       })}
+      <span className='f5 ttu tracked-mega mt2 pv2'>Introduceti codul</span>
       <Calc />
       <CoinInsert />
-      <button onClick={() => reset()}>reset</button>
+      <button onClick={() => reset()} className='f5 ph4 pv2 mt4 white bg-red br3 w-30 center'>
+        reset
+      </button>
     </div>
   );
 };

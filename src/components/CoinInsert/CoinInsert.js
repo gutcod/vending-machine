@@ -10,6 +10,7 @@ const CoinInsert = ({ selectedCoin, selectCoin }) => {
       {COINS_MAP.map((coin, idx) => {
         return (
           <button
+            className='f5 ph3 pv2 mt4 white bg-blue br3 w-30'
             key={idx}
             disabled={selectedCoin}
             onClick={() => selectCoin(coin)}>{`${coin} lei`}</button>
