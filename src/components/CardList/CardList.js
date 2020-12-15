@@ -1,15 +1,17 @@
 import React from "react";
-import { PRODUCTS } from "../../data";
+import { connect } from "react-redux";
 import Card from "../Card/Card";
 
-const CardList = () => {
+const CardList = ({ products }) => {
   return (
     <div>
-      {PRODUCTS.map(({ id, ...other }) => {
-        return <Card key={id} {...other} />;
+      {products.map((data, idx) => {
+        return <Card key={idx} {...data} />;
       })}
     </div>
   );
 };
 
-export default CardList;
+const mapStateToProps = (state) => ({ products: state.product.products });
+
+export default connect(mapStateToProps, null)(CardList);

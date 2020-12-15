@@ -1,5 +1,20 @@
 .App {
   text-align: center;
+  display: flex;
+
+  justify-content: center;
+}
+.boxA {
+  width: 60%;
+  margin: 40px;
+}
+.boxB {
+  width: 21%;
+  margin: 40px;
+  border: #282c34 solid 1px;
+  background-color: lavender;
+  border-radius: 15px;
+  margin-left: 5px;
 }
 
 .App-logo {
