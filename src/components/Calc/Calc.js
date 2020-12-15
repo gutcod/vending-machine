@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+
 const Calc = ({ productId, selectedCoin, products }) => {
   const product = [...products].filter(elem => elem.cod === productId)[0];
   if (productId.length < 2) {

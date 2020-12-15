@@ -15,7 +15,7 @@ const productReducer = (state = INITIAL_STATE, action) => {
     case REDUCE_AMOUNT:
       return {
         ...state,
-        products: state.products.map((product) => {
+        products: state.products.map(product => {
           if (product.cod === action.payload) {
             product.amount = product.amount - 1;
             return product;

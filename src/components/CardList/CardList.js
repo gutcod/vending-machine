@@ -12,6 +12,6 @@ const CardList = ({ products }) => {
   );
 };
 
-const mapStateToProps = (state) => ({ products: state.product.products });
+const mapStateToProps = state => ({ products: state.product.products });
 
 export default connect(mapStateToProps, null)(CardList);
